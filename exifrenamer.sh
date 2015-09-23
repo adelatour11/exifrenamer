@@ -6,7 +6,7 @@ year=$(echo ${test::-14} | sed 's/\://g' | sed 's/\ //g')
 month=$(echo ${test:4:-12} | sed 's/\://g' | sed 's/\ //g')
 day=$(echo ${test:7:-8} | sed 's/\://g' | sed 's/\ //g')
 fulldate=$(echo $year-$month-$day)
-monthinletters=$(LANG=fr_FR.UTF-8 date -d $fulldate '+%B')
+monthinletters=$(date -d $fulldate '+%B')
 monthinletterscap=${monthinletters^}
 path=$(echo $year/$monthinletterscap-$year/$day-$monthinletterscap-$year)
 mkdir -p $path
